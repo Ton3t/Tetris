@@ -3,6 +3,8 @@ let dropInterval = 1000;
 let dropCounter = 0;
 
 const canvas = document.getElementById('tetris');
+const canvasNext = document.getElementById('nextPiece');
+const contextNext = canvasNext.getContext('2d');
 const context = canvas.getContext('2d');
 const grid = createMatriz(10, 20);
 const colores = [
@@ -26,6 +28,7 @@ const player = {
 };
 
 context.scale(20, 20);
+contextNext.scale(19,19);
 
 function createPiece(tipo) {
     if (tipo==='T') {
@@ -118,14 +121,26 @@ function drawMatriz(matriz, offset) {
     });
 }
 
+function drawMatrizNext(matriz, offset) {
+    contextNext.fillStyle = "black";
+    contextNext.fillRect(0, 0, canvasNext.width, canvasNext.height);
+
+    matriz.forEach((row, y) => {
+        row.forEach((value, x) => {
+            if (value !== 0) {
+                contextNext.fillStyle = colores[value];
+                contextNext.fillRect(x + offset.x, y + offset.y, 1, 1);
+            }
+        });
+    });
+}
+
 function draw() {
     context.fillStyle = "#000";
     context.fillRect(0, 0, canvas.width, canvas.height);
-    drawMatriz(grid, {
-        x: 0,
-        y: 0
-    });
+    drawMatriz(grid, {x: 0, y: 0});
     drawMatriz(player.matriz, player.pos);
+    drawMatrizNext(player.next, {x:1, y:1});
 }
 
 function gridSweet() {
@@ -195,9 +210,27 @@ function rotate(matriz) {
 
 function playerReset() {
     const pieces = 'TOLJZSI';
-    player.matriz = createPiece(pieces[pieces.length * Math.random() | 0]);  
+    dropInterval = 1000 - (player.level * 100);
+    if(player.next === null) {
+        player.matriz = createPiece(pieces[pieces.length * Math.random() | 0]);
+    }
+
+    else {
+        player.matriz = player.next;
+    }
+    
+    player.next = createPiece(pieces[pieces.length * Math.random() | 0]);  
     player.pos.x = (grid[0].length / 2 | 0) - (player.matriz[0].length / 2 | 0);
     player.pos.y = 0;
+
+    if(colide(grid, player)) {
+        grid.forEach(row => row.fill(0));
+        player.score = 0;
+        player.level = 0;
+        player.lines = 0;
+        alert("Has perdido");
+        updateScore();
+    }
 }
 
 function updateScore() {

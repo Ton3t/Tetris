@@ -7,4 +7,11 @@ body {
 .contenedor {
     width: 300px;
     margin: auto;
+    text-align: center;
+}
+
+.estadisticas {
+    width: 300px;
+    margin: auto;
+    text-align: center;
 }
