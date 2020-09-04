@@ -61,6 +61,18 @@ button {
 
 
 #musica {
-    display: none;
+    display: block;
 }
 
+@media (max-width: 400px) {
+
+    canvas#tetris {
+        width: auto;
+        height: auto;
+    }
+
+    canvas#nextPiece {
+        width: auto;
+        height: auto;
+    }
+}
