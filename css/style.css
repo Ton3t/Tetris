@@ -5,6 +5,7 @@ body {
     margin: 0px;
     padding: 0px;
     background-image: url('../img/fondo.jpg');
+    background-repeat: no-repeat;
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
     text-align: center;
@@ -29,7 +30,7 @@ body {
 
 .right {
     text-align: right;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
 canvas#tetris {
@@ -63,11 +64,3 @@ button {
     display: block;
 }
 
-@media (min-width:420px) {
-    .body {
-        position: static;
-        width: auto;
-        height: auto;
-        transform: translate(0%);
-    }
-}
