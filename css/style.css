@@ -4,18 +4,19 @@
 body {
     margin: 0px;
     padding: 0px;
-    background-color: blanchedalmond;
+    background-image: url('../img/fondo.jpg');
     font-family: 'Inconsolata', monospace;
     font-weight: bold;
     text-align: center;
 }
 
 .title {
-    color: black;
+    color: blanchedalmond;
     font-weight: bold;
     text-align: center;
     font-size: 2em;
     text-shadow: 5px 5px rgba(255, 255, 255, 0.5);
+    margin-bottom: 5px;
 }
 
 .body {
@@ -31,8 +32,8 @@ body {
     margin-right: 50px;
 }
 
-canvas #tetris {
-    border: solid .2em #000;
+canvas#tetris {
+    border: solid .2em #fff;
     border-radius: 5px;
     height: 90vh;
     align-items: center;
@@ -41,15 +42,21 @@ canvas #tetris {
 .caja_lateral {
     border: solid .2em #fff;
     margin-bottom: 20px;
-    max-width: 200px;
+    max-width: 150px;
     background-color: #000;
     color: blanchedalmond;
 }
 
-canvas #nextPiece {
+canvas#nextPiece {
     width: 100%;
 }
 
+
+button {
+    border-radius: 45%;
+    background-color: blanchedalmond;
+    font-weight: bold;
+}
 
 
 #musica {

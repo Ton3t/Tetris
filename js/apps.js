@@ -22,11 +22,15 @@ var btnRotar = document.getElementById('rotar');
 var btnIzq = document.getElementById('izq');
 var btnDer = document.getElementById('der');
 var btnBajar = document.getElementById('abajo');
+var btnPlay = document.getElementById('play');
+var btnStop = document.getElementById('stop');
 
 btnRotar.addEventListener('click', rotar);
 btnIzq.addEventListener('click', izq);
 btnDer.addEventListener('click', der);
 btnBajar.addEventListener('click', abajo);
+btnPlay.addEventListener('click', musica);
+//btnStop.addEventListener('click', musicaStop);
 
 function rotar() {
     playerRotate();
@@ -44,11 +48,12 @@ function der() {
     playerMove(1);
 }
 
-var musica = document.getElementById('audio');
 
-function musicaTetris() {
-    musica.play();
+function musica() {
+    var audio = document.getElementById('audio');
+    audio.play();
 }
+
 
 const player = {
     pos: {x: 0, y: 0},
@@ -260,6 +265,7 @@ function playerReset() {
         player.score = 0;
         player.level = 0;
         player.lines = 0;
+        rowCount = 0;
         alert("Has perdido");
         updateScore();
     }
@@ -296,6 +302,7 @@ function update(time = 0) {
 }
 
 window.onload = function() {
+    this.musica();
     this.playerReset();
     this.updateScore();
     this.update();
