@@ -18,6 +18,32 @@ const colores = [
     'pink'
 ];
 
+var btnRotar = document.getElementById('rotar');
+var btnIzq = document.getElementById('izq');
+var btnDer = document.getElementById('der');
+var btnBajar = document.getElementById('abajo');
+
+btnRotar.addEventListener('click', rotar);
+btnIzq.addEventListener('click', izq);
+btnDer.addEventListener('click', der);
+btnBajar.addEventListener('click', abajo);
+
+function rotar() {
+    playerRotate();
+}
+
+function abajo() {
+    playerDrop();
+}
+
+function izq() {
+    playerMove(-1);
+}
+
+function der() {
+    playerMove(1);
+}
+
 const player = {
     pos: {x: 0, y: 0},
     matriz: null,
