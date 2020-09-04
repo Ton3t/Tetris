@@ -44,6 +44,12 @@ function der() {
     playerMove(1);
 }
 
+var musica = document.getElementById('audio');
+
+function musicaTetris() {
+    musica.play();
+}
+
 const player = {
     pos: {x: 0, y: 0},
     matriz: null,
@@ -289,6 +295,9 @@ function update(time = 0) {
     requestAnimationFrame(update);
 }
 
-playerReset();
-updateScore();
-update();
+window.onload = function() {
+    this.playerReset();
+    this.updateScore();
+    this.update();
+}
+
