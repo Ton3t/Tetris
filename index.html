@@ -7,16 +7,36 @@
     <title>Tetris</title>
 </head>
 <body>
-    <div class="estadisticas">
-        <div id="score"></div>
-        <div id="lines"></div>
-        <div id="level"></div>
-        <canvas id="nextPiece" width="100" height="100"></canvas>
+    <div class="title">Tetris</div>
+    <div class="body">
+        <div class="positions right">
+            <canvas id="tetris" width="200" height="400"></canvas>
+
+        </div>
+        <div class="positions">
+            <div class="caja_lateral">
+                Siguiente <br>
+            <canvas id="nextPiece" width="100" height="100"></canvas>
+            </div>
+            <div class="caja_lateral">
+                Puntos
+                <div id="score"></div>
+
+            </div>
+            <div class="caja_lateral">
+                Lineas
+                <div id="lines"></div>
+
+            </div>
+            <div class="caja_lateral">
+                Nivel
+                <div id="level"></div>
+            </div>
+        </div>
+        
     </div>
-    <div class="contenedor">
-        <canvas id="tetris" width="200" height="400"></canvas>
-        <script src="js/apps.js"></script>
-    </div>
+    <script src="js/apps.js"></script>
+    
     
 </body>
 </html>
