@@ -1,7 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+
 body {
     margin: 0px;
     padding: 0px;
     background-color: blanchedalmond;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    text-align: center;
 }
 
 .title {
@@ -29,12 +35,18 @@ canvas#tetris {
     border: solid .2em #000;
     border-radius: 5px;
     height: 90vh;
+    align-items: center;
 }
 
 .caja_lateral {
-    border: solid .2em #000;
+    border: solid .2em #fff;
     margin-bottom: 20px;
     max-width: 200px;
-    background-color: #fff;
-
+    background-color: #000;
+    color: blanchedalmond;
 }
+
+canvas#nextPiece {
+    width: 100%;
+}
+
