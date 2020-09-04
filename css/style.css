@@ -62,3 +62,12 @@ button {
 #musica {
     display: block;
 }
+
+@media (min-width:420px) {
+    .body {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translate(0%);
+    }
+}

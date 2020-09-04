@@ -30,7 +30,7 @@ btnIzq.addEventListener('click', izq);
 btnDer.addEventListener('click', der);
 btnBajar.addEventListener('click', abajo);
 btnPlay.addEventListener('click', musica);
-//btnStop.addEventListener('click', musicaStop);
+btnStop.addEventListener('click', musicaStop);
 
 function rotar() {
     playerRotate();
@@ -52,6 +52,11 @@ function der() {
 function musica() {
     var audio = document.getElementById('audio');
     audio.play();
+}
+
+function musicaStop() {
+    var audio = document.getElementById('audio');
+    audio.pause();
 }
 
 
@@ -302,6 +307,7 @@ function update(time = 0) {
 }
 
 window.onload = function() {
+    this.musicaStop();
     this.musica();
     this.playerReset();
     this.updateScore();
