@@ -1,6 +1,7 @@
 let lastTime = 0;
 let dropInterval = 1000;
 let dropCounter = 0;
+let pause = false;
 
 const canvas = document.getElementById('tetris');
 const canvasNext = document.getElementById('nextPiece');
@@ -48,7 +49,6 @@ function der() {
     playerMove(1);
 }
 
-
 function musica() {
     var audio = document.getElementById('audio');
     audio.play();
@@ -58,7 +58,6 @@ function musicaStop() {
     var audio = document.getElementById('audio');
     audio.pause();
 }
-
 
 const player = {
     pos: {x: 0, y: 0},
@@ -271,8 +270,9 @@ function playerReset() {
         player.level = 0;
         player.lines = 0;
         rowCount = 0;
-        alert("Has perdido");
+        alert("Has perdido\nPuntos: " + player.score);
         updateScore();
+        location.reload();
     }
 }
 
@@ -312,5 +312,6 @@ window.onload = function() {
     this.playerReset();
     this.updateScore();
     this.update();
+    alert("Controles PC: flechas del pad.\nControles tlfn: Tactiles");
 }
 

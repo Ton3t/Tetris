@@ -46,6 +46,7 @@ canvas#tetris {
     max-width: 150px;
     background-color: #000;
     color: blanchedalmond;
+    padding: 5px;
 }
 
 canvas#nextPiece {
@@ -59,6 +60,9 @@ button {
     font-weight: bold;
 }
 
+#jugar {
+    width: 100%;
+}
 
 #musica {
     display: block;
@@ -75,4 +79,5 @@ button {
         width: auto;
         height: auto;
     }
+
 }
