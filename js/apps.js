@@ -205,7 +205,6 @@ function gridSweet() {
     }
 }
 
-
 function playerDrop() {
     player.pos.y++;
     if (colide(grid, player)) {
